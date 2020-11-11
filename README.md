@@ -1,3 +1,4 @@
 # first
 
-This respository serves as a base for experiments!
+Get some practice with Nifty!
+http://derthorsten.github.io/nifty/docs/python/html/index.html
