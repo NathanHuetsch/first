@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def generateGrid(gridSize):
     def nid(x, y):
         return x*gridSize[1] + y
-    G = nifty.graph.UndirectedGraph
+    G = nifty.graph.undirectedGraph
     g =  G(gridSize[0] * gridSize[1])
     for x in range(gridSize[0]):
         for y in range(gridSize[1]):
@@ -22,11 +22,6 @@ def generateGrid(gridSize):
                 v = nid(x, y+1)
                 g.insertEdge(u, v)
     return g
-
-g= generateGrid((3,2))
-print(g)
-nifty.graph.drawGraph(g)
-plt.show()
 
 class MyCallback(nifty.graph.EdgeContractionGraphCallback):
     def __init__(self):
@@ -48,6 +43,7 @@ class MyCallback(nifty.graph.EdgeContractionGraphCallback):
 callback = MyCallback()
 
 # the edge contraction graph
+g= generateGrid((3,2))
 cg = nifty.graph.edgeContractionGraph(g,callback)
 
 
